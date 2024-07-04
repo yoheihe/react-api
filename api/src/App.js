@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-
 import React, { useState } from 'react';
 
 const App = () => {
@@ -22,14 +21,17 @@ const App = () => {
     // test 
     console.log('step3');
   };
-  const id = "ID"
-  const title = "Title"
+  // 投稿をクリアする
+  const clearPosts = () => {
+    setPosts([]);
+  };
 
   return (
     <div>
       <h2>Results</h2>
       <button onClick={fetchPosts}>Fetch Posts</button>
-      
+      <button onClick={clearPosts}>Clear Posts</button>
+
       <table border="1">
         <thead>
           <tr>
@@ -46,9 +48,6 @@ const App = () => {
           ))}
         </tbody>
       </table>
-      
- 
-    
     </div>
   );
 };
